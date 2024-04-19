@@ -361,6 +361,12 @@ layout: statement
 <Arrow color="red" x1="750" y1="450" x2="600" y2="340" width="4" />
 
 ---
+layout: statement
+---
+
+# 実際に使ってみる
+
+---
 
 # まとめ
 
