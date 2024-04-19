@@ -3,14 +3,13 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: /images/background.jpg
+background: https://cover.sli.dev
 # some information about your slides, markdown enabled
-title: Welcome to Slidev
+title: GitHub Codeapacesによるポータビリティ性の高い環境構築とスムーズなチーム開発
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+  ## GitHub Codeapacesによるポータビリティ性の高い環境構築とスムーズなチーム開発
+  
+  これは[VS Code Conference Japan 2024](https://vscodejp.github.io/conference-2024/)のスライドです。
 # apply any unocss classes to the current slide
 class: text-center
 # https://sli.dev/custom/highlighters.html
@@ -168,10 +167,10 @@ layout: statement
 | ストレージ | ストレージ | 1GB-月 | 適用なし | $0.07 |
 
 ---
-layout: statement
+layout: section
 ---
 
-# How to use
+# 使い方
 
 ---
 
@@ -212,16 +211,42 @@ VS Codeの拡張機能から起動できる
 ![](/images/open-on-desktop.gif)
 
 ---
+
+# Codespacesを利用するうえでの注意点
+
+- 不要なインスタンスは削除する
+  - <span v-mark="{ at: 1, color: 'red', type: 'underline' }">使っていなくても</span>ストレージの課金は発生する
+  - デフォルトでは30日未使用の場合自動で削除される
+  - 定期的に[インスタンス一覧](https://github.com/codespaces)を確認しよう
+- 作成したインスタンスにアクセスできるのは自分のみ
+  - 他のユーザーとインスタンスを<span v-mark="{ at: 2, color: 'red', type: 'underline' }">共有することはできない</span>
+- インスタンスを削除すると作業中のデータは消える
+  - インスタンスを削除する前に必ず<span v-mark="{ at: 3, color: 'red', type: 'underline' }"> `git commit`, `git push` </span>しておこう
+---
+layout: section
+---
+
+# チーム開発の効率化
+
+---
 layout: statement
 ---
 
-# チーム開発での活用
+# 環境構築の効率化・共通化
 
 ---
 
-# OS・マシンスペックの差を気にせずに開発
+# 去年話したDev Container
 
 ![](/images/conf-2022-2023.png)
+
+---
+
+# Dev Containerのおさらい
+
+- VS CodeをDocker Container内で利用できる
+- ローカルの環境汚染をDocker Container内に収められる
+- `.devcontainer/devcontainer.json` を設定することで利用可能
 
 ---
 
@@ -295,6 +320,29 @@ layout: statement
 
 ---
 
+# Dev Containerの設定を元にCodespacesが立ち上がる
+
+既存のリソースがそのまま使えるので導入が簡単
+
+![](/images/rebuild-container.png)
+
+---
+layout: statement
+---
+
+# Pull Requestの効率化
+
+---
+
+# Pull Requestの悩み
+
+- ローカルでcheckoutしてレビューするのが面倒
+- レビューのたびに `git stash` しないといけない
+- 繁忙期でPull Requestが飛び交っていると大変
+- 並行レビューはもう地獄
+
+---
+
 # Pull RequestのレビューをCodespaces上で行う
 
 ローカルでcheckoutせずにレビューが可能
@@ -304,7 +352,21 @@ layout: statement
 
 ---
 
-# 急な対応が必要な場合にも対応可能
+# 消し忘れに注意
+
+放置すると課金対象（30日で自動削除）
+
+![](/images/delete-codespaces.png)
+
+<Arrow color="red" x1="750" y1="450" x2="600" y2="340" width="4" />
+
+---
+
+# まとめ
+
+- GitHub Codespacesは<span v-mark="{ at: 1, color: 'red', type: 'circle' }">リモート環境で</span>VS Codeを利用できる
+- <span v-mark="{ at: 2, color: 'red', type: 'circle' }">無料枠あり</span>の有料サービス
+- <span v-mark="{ at: 3, color: 'red', type: 'circle' }">Dev Containerの設定</span>をそのまま利用できる
 
 ---
 
