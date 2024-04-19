@@ -297,7 +297,10 @@ layout: statement
 
 # Pull RequestのレビューをCodespaces上で行う
 
+ローカルでcheckoutせずにレビューが可能
 
+![](/images/open-from-pr.png)
+<Arrow color="red" x1="800" y1="380" x2="765" y2="285" width="4" />
 
 ---
 
